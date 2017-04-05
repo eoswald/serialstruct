@@ -1,4 +1,4 @@
-# serialstruct
+# serialstructi [![Build Status](https://travis-ci.org/eoswald/serialstruct.svg?branch=master)](https://travis-ci.org/eoswald/serialstruct)
 Implements a StructuredPacket for pySerial's `serial.threaded` module
 
 ## Motivation
