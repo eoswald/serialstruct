@@ -1,8 +1,10 @@
-# serialstructi [![Build Status](https://travis-ci.org/eoswald/serialstruct.svg?branch=master)](https://travis-ci.org/eoswald/serialstruct)
+# serialstruct [![Build Status](https://travis-ci.org/eoswald/serialstruct.svg?branch=master)](https://travis-ci.org/eoswald/serialstruct)
 Implements a StructuredPacket for pySerial's `serial.threaded` module
 
 ## Installation
-`pip install serialstruct`
+```bash
+pip install serialstruct
+```
 
 ## Motivation
 When sending a structured binary packet over Serial, the only way (that I'm aware
