@@ -44,9 +44,14 @@ starts with a '(' (0x28) and ends with a ')' (0x29). This means the bytes 0x28 a
 Subclass `serialstruct.StructuredPacket` to specify the data size in the packet
 and to implement the `handle_packet()` callback function.
 ```python
+import struct
+
 import serial
-import serial.threaded
 import serialstruct
+import time
+
+
+PACKET_STRUCT = struct.Struct("<IxIx")
 
 class MyPacket(serialstruct.StructuredPacket):
 
@@ -56,12 +61,22 @@ class MyPacket(serialstruct.StructuredPacket):
         super(MyPacket, self).__init__(self.DATA_SIZE)
 
     def handle_packet(self, packet):
-        print(packet)
+        print(PACKET_STRUCT.unpack(packet))
+
+    def send_packet(self, packet):
+        self.transport.write(self.HEADER)
+        self.transport.write(packet)
 
 
-ser = serial.Serial(PORT)
+ser = serial.serial_for_url("loop://", baudrate=115200, timeout=1)
 with serial.threaded.ReaderThread(ser, MyPacket) as protocol:
-    # Default header is b'\x01\x02\x03\x04\x05'
-    protocol.transport.write(MyPacket.HEADER)
-    protocol.transport.write(b'\x01\x00\x00\x00\x00\x02\x00\x00\x00\x00')
+    # unsigned int, pad, unsigned int, pad; with no alignment
+    packet = PACKET_STRUCT.pack(1, 2)
+    protocol.send_packet(packet)
+    time.sleep(1)
+```
+
+Prints:
+```bash
+(1, 2)
 ```
