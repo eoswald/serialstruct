@@ -50,7 +50,7 @@ import serial
 import serialstruct
 import time
 
-
+# unsigned int, pad, unsigned int, pad; with no alignment
 PACKET_STRUCT = struct.Struct("<IxIx")
 
 class MyPacket(serialstruct.StructuredPacket):
@@ -70,7 +70,6 @@ class MyPacket(serialstruct.StructuredPacket):
 
 ser = serial.serial_for_url("loop://", baudrate=115200, timeout=1)
 with serial.threaded.ReaderThread(ser, MyPacket) as protocol:
-    # unsigned int, pad, unsigned int, pad; with no alignment
     packet = PACKET_STRUCT.pack(1, 2)
     protocol.send_packet(packet)
     time.sleep(1)
