@@ -1,6 +1,10 @@
 # serialstruct [![Build Status](https://travis-ci.org/eoswald/serialstruct.svg?branch=master)](https://travis-ci.org/eoswald/serialstruct)
 Implements a StructuredPacket for pySerial's `serial.threaded` module
 
+## Requirements
+This is currently only tested with Python 3.6 but feel free to submit an issue or PR
+for any compatability problems.
+
 ## Installation
 ```bash
 pip install serialstruct
