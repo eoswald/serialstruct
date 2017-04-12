@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
         name='serialstruct',
-        version='1.0.1',
+        version='1.0.2',
         description=('Implements a StructuredPacket for pySerial\'s '
             'serial.threaded module'),
         author='Eric Oswald',
