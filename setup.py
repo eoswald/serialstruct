@@ -8,6 +8,7 @@ setup(
             'serial.threaded module'),
         author='Eric Oswald',
         author_email='eoswald39@gmail.com',
+        url='https://github.com/eoswald/serialstruct',
         license='MIT',
         packages=find_packages(exclude=['test']),
         install_requires=['pyserial']
