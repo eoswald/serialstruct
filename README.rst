@@ -48,8 +48,8 @@ starts with a '(' (0x28) and ends with a ')' (0x29). This means the bytes 0x28 a
 
 Usage
 =====
-Subclass `serialstruct.StructuredPacket` to specify the data size in the packet
-and to implement the `handle_packet()` callback function.
+Subclass ``serialstruct.StructuredPacket`` to specify the data size in the packet
+and to implement the ``handle_packet()`` callback function.
 
 .. code-block:: python
 
