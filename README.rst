@@ -7,7 +7,8 @@ Implements a StructuredPacket for pySerial's `serial.threaded` module
 Installation
 ============
 .. code-block:: bash
-        pip install serialstruct
+
+        $ pip install serialstruct
 
 
 Motivation
@@ -18,6 +19,7 @@ larger than any of the elements and add padding between each element. Here's an
 example:
 
 .. code-block:: c
+
         struct Packet {
                 int sensor1;
                 int sensor2;
@@ -28,6 +30,7 @@ impossible to know what byte of the packet we're reading. To mitigate this we ca
 add a header and some padding.
 
 .. code-block:: c
+
         struct Packet {
                 char header[5]; // Any sequence without a '\0'
                 int sensor1;
@@ -48,6 +51,7 @@ Usage
 Subclass `serialstruct.StructuredPacket` to specify the data size in the packet
 and to implement the `handle_packet()` callback function.
 .. code-block:: python
+
         import struct
 
         import serial
@@ -79,8 +83,9 @@ and to implement the `handle_packet()` callback function.
             protocol.send_packet(packet)
             time.sleep(1)
 
-Prints:
+Prints
 .. code-block:: bash
+
         (1, 2)
 
 .. |build-status| image:: https://travis-ci.org/eoswald/serialstruct.svg?branch=master
