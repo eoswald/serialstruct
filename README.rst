@@ -1,6 +1,6 @@
-============================
-serialstruct  |build-status|
-============================
+===================================
+serialstruct  |build-status| |pypi|
+===================================
 
 Implements a StructuredPacket for pySerial's `serial.threaded` module
 
@@ -50,6 +50,7 @@ Usage
 =====
 Subclass `serialstruct.StructuredPacket` to specify the data size in the packet
 and to implement the `handle_packet()` callback function.
+
 .. code-block:: python
 
         import struct
@@ -83,9 +84,13 @@ and to implement the `handle_packet()` callback function.
             protocol.send_packet(packet)
             time.sleep(1)
 
-Prints
+Prints:
+
 .. code-block:: bash
 
         (1, 2)
 
 .. |build-status| image:: https://travis-ci.org/eoswald/serialstruct.svg?branch=master
+.. |pypi| image:: https://img.shields.io/pypi/v/serialstruct.svg?style=flat-square&label=latest%20stable%20version
+    :target: https://pypi.python.org/pypi/serialstruct
+    :alt: Latest version released on PyPi
