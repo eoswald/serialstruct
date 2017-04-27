@@ -90,7 +90,10 @@ Prints:
 
         (1, 2)
 
+
 .. |build-status| image:: https://travis-ci.org/eoswald/serialstruct.svg?branch=master
+
 .. |pypi| image:: https://img.shields.io/pypi/v/serialstruct.svg?style=flat-square&label=latest%20stable%20version
     :target: https://pypi.python.org/pypi/serialstruct
     :alt: Latest version released on PyPi
+
