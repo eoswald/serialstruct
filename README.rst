@@ -94,6 +94,8 @@ Prints:
 
 
 .. |build-status| image:: https://travis-ci.org/eoswald/serialstruct.svg?branch=master
+    :target: http://travis-ci.org/eoswald/serialstruct
+    :alt: Build status of master branch
 
 .. |pypi| image:: https://img.shields.io/pypi/v/serialstruct.svg?style=flat-square&label=latest%20stable%20version
     :target: https://pypi.python.org/pypi/serialstruct
