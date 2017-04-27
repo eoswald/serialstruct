@@ -1,6 +1,8 @@
-===================================
-serialstruct  |build-status| |pypi|
-===================================
+============
+serialstruct
+============
+
+|build-status| |pypi|
 
 Implements a StructuredPacket for pySerial's `serial.threaded` module
 
